@@ -1,42 +1,42 @@
 ---
 agent: 'agent'
-description: 'Mine local Copilot JSONL session logs for repeated workflow problems'
+description: 'ローカルの Copilot JSONL セッションログから繰り返されるワークフロー問題を抽出する'
 ---
 
-Inspect local Copilot session logs under `~/.copilot/session-state/*/events.jsonl` and select only sessions demonstrably related to this repository.
+`~/.copilot/session-state/*/events.jsonl` 配下のローカル Copilot セッションログを確認し、このリポジトリに明確に関連するセッションのみを選ぶ。
 
-Do not copy logs into the repository, edit the logs, or reproduce secrets, personal data, or unnecessary source content.
+ログをリポジトリにコピーしたり、ログを編集したり、秘密、個人情報、不要なソース内容を再現したりしない。
 
-First report:
+まず最初に次を報告する:
 
-- the log location searched;
-- the number of candidate logs;
-- the number of sessions judged relevant;
-- the evidence used to associate sessions with this repository;
-- any logs that could not be read.
+- 検索したログの場所;
+- 候補ログの数;
+- 関連と判断したセッション数;
+- セッションをこのリポジトリに関連付けるために使った根拠;
+- 読み取れなかったログ。
 
-Analyze up to 100 relevant sessions, largest first. Divide them into up to 10 groups. If parallel analysis is available, analyze groups independently; otherwise process them sequentially.
+関連するセッションを最大 100 件まで、サイズの大きい順に分析する。最大 10 グループに分ける。並列分析が可能なら各グループを独立に分析し、そうでなければ順番に処理する。
 
-For each group, report only:
+各グループについて、次の項目だけを報告する:
 
-1. cases where work proceeded without inspecting relevant files or data;
-2. unnecessary tool usage spent locating files;
-3. project knowledge rediscovered in separate sessions;
-4. explicit user corrections repeated within or across sessions;
-5. validation repeatedly omitted and later requested.
+1. 関連するファイルやデータを確認せずに作業を進めたケース;
+2. ファイルの所在確認に費やした不要なツール使用;
+3. 別々のセッションで再発見されたプロジェクト知識;
+4. セッション内またはセッション間で繰り返された明示的なユーザーの修正;
+5. 検証が繰り返し省略され、後で要求されたケース。
 
-Combine the group results and sort patterns by the number of groups and sessions in which they appeared.
+グループごとの結果をまとめ、出現したグループ数とセッション数に基づいてパターンを並べ替える。
 
-Compare the results with [the current instructions](../copilot-instructions.md) and [the learning candidates](../copilot-learnings.md). Recommend one destination for each pattern:
+結果を [現在の指示](../copilot-instructions.md) と [学習候補](../copilot-learnings.md) と比較する。各パターンに対して次のいずれかを推奨する:
 
-- repository-wide instruction;
-- path-specific instruction;
-- learning candidate;
-- repository documentation;
-- automated check;
-- no change.
+- リポジトリ全体の指示;
+- パス固有の指示;
+- 学習候補;
+- リポジトリのドキュメント;
+- 自動チェック;
+- 変更なし。
 
-End with evidence-based proposed diffs. Do not modify files.
+最後に、根拠に基づく提案差分を示す。ファイルは変更しない。
 
-If local JSONL logs are unavailable or inaccessible, stop after reporting the paths checked. Do not infer missing history.
+ローカルの JSONL ログが利用できないか、アクセスできない場合は、確認したパスを報告した時点で停止する。履歴の欠落を推測してはいけない。
 

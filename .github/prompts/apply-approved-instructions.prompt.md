@@ -1,36 +1,36 @@
 ---
 agent: 'agent'
-description: 'Apply only user-approved Copilot instruction and learning changes'
+description: 'ユーザーが承認した Copilot の指示と学習の変更のみを適用する'
 ---
 
-Apply only the instruction and learning changes explicitly approved by the user in this conversation.
+この会話でユーザーが明示的に承認した指示と学習の変更のみを適用する。
 
-Allowed destinations are:
+許可される対象は次のとおり:
 
-- [repository-wide instructions](../copilot-instructions.md);
-- [learning candidates](../copilot-learnings.md);
-- path-specific files under `.github/instructions/`.
+- [リポジトリ全体の指示](../copilot-instructions.md);
+- [学習候補](../copilot-learnings.md);
+- `.github/instructions/` 配下のパス固有ファイル。
 
-Before editing:
+編集前に:
 
-1. list the exact approved changes;
-2. identify overlapping or conflicting existing rules;
-3. state which files will change;
-4. stop and ask for clarification if approval is ambiguous.
+1. 承認済みの変更を正確に列挙する;
+2. 重複または競合する既存ルールを特定する;
+3. どのファイルが変更されるかを示す;
+4. 承認があいまいな場合は、確認を求めて停止する。
 
-While editing:
+編集中は:
 
-- use short, specific, imperative, reviewable rules;
-- merge duplicate meanings instead of appending another rule;
-- keep one-off observations in the learnings file;
-- move path-specific rules out of repository-wide instructions;
-- do not add rules better enforced by lint, formatter, tests, or CI;
-- do not modify unrelated files.
+- 短く具体的で、命令形かつレビューしやすいルールを用いる;
+- 重複した意味は別のルールとして追加せずに統合する;
+- 一時的な観察は学習ファイルに残す;
+- パス固有のルールはリポジトリ全体の指示から分離する;
+- lint、フォーマッター、テスト、CI でより適切に強制できるルールは追加しない;
+- 関連しないファイルは変更しない。
 
-After editing, report:
+編集後に報告する:
 
-- files changed;
-- rules added, changed, moved, or removed;
-- approved candidates not applied and the reason;
-- verification performed.
+- 変更したファイル;
+- 追加、変更、移動、削除したルール;
+- 承認済みの候補のうち適用しなかったものとその理由;
+- 実施した検証。
 

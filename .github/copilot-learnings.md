@@ -1,29 +1,29 @@
-# Copilot Learnings
+# Copilot の学び
 
-This file contains improvement candidates discovered from Copilot sessions.
-Items in this file are not repository-wide rules until reviewed and approved.
+このファイルには、Copilot のセッションから発見された改善候補が含まれています。
+このファイルの項目は、レビューと承認が完了するまではリポジトリ全体のルールにはなりません。
 
-## Confirmed successful approaches
+## 確認済みの成功したアプローチ
 
-<!-- Record approaches that succeeded in multiple sessions. -->
+<!-- 複数セッションで成功したアプローチを記録する。 -->
 
-## Repeated user corrections
+## 繰り返されたユーザーの修正
 
-<!-- Record repeated corrections with date, session count, and concise evidence. -->
+<!-- 日付、セッション数、簡潔な根拠を含めて、繰り返された修正を記録する。 -->
 
-## Failed approaches
+## 失敗したアプローチ
 
-<!-- Record approaches that caused rework or incorrect results. -->
+<!-- 再作業や不正な結果を引き起こしたアプローチを記録する。 -->
 
-## Repeatedly rediscovered project knowledge
+## 繰り返し再発見されたプロジェクト知識
 
-<!-- Record non-obvious facts repeatedly rediscovered across sessions. -->
+<!-- セッションをまたいで繰り返し再発見された、目立たない重要な事実を記録する。 -->
 
-## Candidates requiring more evidence
+## さらに証拠が必要な候補
 
-<!-- Record one-off observations here. Do not promote them without more evidence. -->
+<!-- 一度きりの観察をここに記録する。十分な証拠がない限り昇格させない。 -->
 
-## Proposed instruction changes
+## 提案中の指示変更
 
-<!-- Stage proposed rules here before changing copilot-instructions.md. -->
+<!-- copilot-instructions.md を変更する前に、提案中のルールをここに整理する。 -->
 

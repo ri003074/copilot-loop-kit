@@ -2,10 +2,10 @@
 applyTo: "**/*.test.*,**/*.spec.*,**/test/**,**/tests/**"
 ---
 
-- Test externally observable behavior instead of implementation details.
-- Follow the repository's existing test structure, naming, fixtures, and assertion style.
-- Cover the changed behavior and its important failure path.
-- Avoid fixed delays for asynchronous behavior; wait for observable conditions.
-- Keep tests deterministic and independent of execution order.
-- Do not weaken or delete an existing assertion solely to make a change pass.
+- 実装の詳細ではなく、外部から観測できる動作をテストする。
+- リポジトリの既存のテスト構造、命名、フィクスチャ、アサーションのスタイルに従う。
+- 変更した動作と、その重要な失敗パスを網羅する。
+- 非同期動作に対して固定待ちを避け、観測可能な条件を待つ。
+- テストは実行順序に依存せず、決定的で独立しているようにする。
+- 変更を通すためだけに既存のアサーションを弱めたり削除したりしない。
 

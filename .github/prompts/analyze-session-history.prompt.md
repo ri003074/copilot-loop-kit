@@ -1,48 +1,48 @@
 ---
 agent: 'agent'
-description: 'Analyze past Copilot sessions and propose evidence-based instruction improvements'
+description: '過去の Copilot セッションを分析し、証拠に基づく指示改善を提案する'
 ---
 
-Analyze the past GitHub Copilot sessions started by me that are related to this repository.
+このリポジトリに関連する、私が開始した過去の GitHub Copilot セッションを分析する。
 
-Compare the findings with [the current repository instructions](../copilot-instructions.md) and [the learning candidates](../copilot-learnings.md).
+その結果を [現在のリポジトリ指示](../copilot-instructions.md) と [学習候補](../copilot-learnings.md) と比較する。
 
-Look specifically for:
+特に次の点を確認する:
 
-- explicit user corrections;
-- requests repeated across multiple sessions;
-- decisions made by Copilot and then reversed by the user;
-- signs of possible frustration, without asserting the user's emotion as fact;
-- work based on assumptions instead of inspected files or data;
-- repeated tool calls spent locating files;
-- project knowledge rediscovered in multiple sessions;
-- missing tests or verification later requested by the user.
+- 明示的なユーザーの修正;
+- 複数セッションで繰り返された要求;
+- Copilot が判断した内容をユーザーが後から取り消した事例;
+- 感情を事実として断定せずに、可能性のあるフラストレーションの兆候;
+- 関連ファイルやデータを確認せずに進めた作業;
+- ファイルの所在確認に時間を費やした重複したツール呼び出し;
+- 複数セッションで再発見されたプロジェクト知識;
+- 後でユーザーが要求した、欠けていたテストや検証。
 
-Classify findings as:
+発見事項を次のように分類する:
 
-- P0: repeated across sessions with explicit corrections or reversals;
-- P1: repeated across multiple sessions;
-- P2: potentially useful but supported by only one occurrence.
+- P0: 複数セッションにまたがり、明示的な修正や取り消しがある;
+- P1: 複数セッションで繰り返される;
+- P2: 1回のみの発生だが有用な可能性がある。
 
-For every finding, report:
+すべての発見事項について、次を報告する:
 
-| Priority | Pattern | Session count | Concise evidence | Already covered? | Recommended destination |
+| 優先度 | パターン | セッション数 | 簡潔な証拠 | 既にカバー済みか | 推奨先 |
 |---|---|---:|---|---|---|
 
-Use only sessions demonstrably related to this repository. Explain how that relationship was determined. Do not expose secrets, personal data, or unnecessary source content.
+このリポジトリに明確に関連するセッションのみを使用する。どのように関連を判断したかも説明する。秘密、個人情報、不要なソース内容は露出させない。
 
-Recommend one of these destinations for each finding:
+各発見事項について次のいずれかを推奨する:
 
-- `.github/copilot-instructions.md` for broadly applicable, always-on rules;
-- `.github/instructions/*.instructions.md` for path-specific rules;
-- `.github/copilot-learnings.md` when more evidence is required;
-- repository documentation for project knowledge;
-- lint, formatter, tests, or CI for mechanically enforceable rules;
-- no change.
+- `.github/copilot-instructions.md`: 広く適用される常時有効なルール;
+- `.github/instructions/*.instructions.md`: パス固有のルール;
+- `.github/copilot-learnings.md`: 追加の証拠が必要な場合;
+- リポジトリのドキュメント: プロジェクト知識;
+- lint、フォーマッター、テスト、CI: 機械的に強制可能なルール;
+- 変更なし。
 
-Propose repository-wide instructions only for P0 and P1 findings that are short, specific, broadly applicable, and reviewable. Merge overlapping rules.
+P0 と P1 の発見事項についてのみ、短く具体的で、広く適用可能かつレビューしやすいリポジトリ全体の指示を提案する。重複するルールは統合する。
 
-End with proposed diffs. Do not modify any files.
+最後に、提案される差分を示す。ファイルは変更しない。
 
-If synced session history is unavailable, say so explicitly and recommend running `/chronicle improve` in Copilot CLI or using the local-log prompt. Do not invent history.
+同期されたセッション履歴が利用できない場合は、そのことを明示し、Copilot CLI で `/chronicle improve` を実行するか、ローカルログ用プロンプトを使うことを推奨する。履歴を勝手に作らない。
 

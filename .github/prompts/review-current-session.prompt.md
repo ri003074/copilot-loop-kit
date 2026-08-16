@@ -1,28 +1,28 @@
 ---
 agent: 'agent'
-description: 'Extract reusable learnings from the current Copilot session'
+description: '現在の Copilot セッションから再利用可能な学びを抽出する'
 ---
 
-Review the current session and extract only:
+現在のセッションを確認し、次の項目だけを抽出する:
 
-- explicit user corrections;
-- causes of rework;
-- approaches that worked well;
-- failures caused by proceeding without inspecting relevant evidence;
-- project knowledge worth preserving;
-- possible instruction gaps.
+- 明示的なユーザーの修正;
+- 再作業の原因;
+- 効果のあったアプローチ;
+- 関連する証拠を確認せずに進めてしまった失敗;
+- 保存価値のあるプロジェクト知識;
+- 考えられる指示の不足。
 
-Compare the observations with [the current learnings](../copilot-learnings.md) and merge duplicate meanings.
+観測結果を [現在の学び](../copilot-learnings.md) と比較し、重複する意味は統合する。
 
-For each observation, include:
+各観測について次を含める:
 
-- date;
-- a concise description;
-- whether it is new or repeated;
-- the number of known supporting sessions;
-- the recommended destination.
+- 日付;
+- 簡潔な説明;
+- 新規か繰り返しか;
+- 既知の支持セッション数;
+- 推奨先。
 
-Put one-off observations under `Candidates requiring more evidence`. Do not treat them as confirmed rules.
+一度きりの観測は `Candidates requiring more evidence` に置く。確認済みのルールとして扱わない。
 
-Present a proposed diff for `.github/copilot-learnings.md`. Do not change `.github/copilot-instructions.md`, and do not modify files until the user approves the diff.
+`.github/copilot-learnings.md` の提案差分を提示する。`.github/copilot-instructions.md` は変更せず、ユーザーが差分を承認するまではファイルを変更しない。
 

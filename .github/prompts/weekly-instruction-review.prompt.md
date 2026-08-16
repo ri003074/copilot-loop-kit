@@ -1,35 +1,35 @@
 ---
 agent: 'agent'
-description: 'Perform a weekly evidence-based review of Copilot instructions and learnings'
+description: 'Copilot の指示と学びを週次で証拠に基づいてレビューする'
 ---
 
-Review [the current instructions](../copilot-instructions.md), [the learning candidates](../copilot-learnings.md), and recent sessions related to this repository.
+[現在の指示](../copilot-instructions.md)、[学習候補](../copilot-learnings.md)、およびこのリポジトリに関連する最近のセッションを確認する。
 
-Perform these checks:
+次のチェックを行う:
 
-1. Identify obsolete entries.
-2. Merge entries with the same meaning.
-3. Identify patterns confirmed across multiple sessions.
-4. Remove candidates now obvious from the repository itself.
-5. Identify rules already enforced by lint, formatting, tests, or CI.
-6. Convert P0 and P1 learnings into short, specific, reviewable rules.
-7. Separate repository-wide rules from path-specific rules.
-8. Keep one-off observations in the learnings file.
+1. 古くなった項目を特定する。
+2. 同じ意味の項目を統合する。
+3. 複数セッションで確認されたパターンを特定する。
+4. リポジトリ自体から明らかになった候補を削除する。
+5. すでに lint、フォーマット、テスト、CI によって強制されているルールを特定する。
+6. P0 と P1 の学びを、短く具体的でレビューしやすいルールに変換する。
+7. リポジトリ全体のルールとパス固有のルールを分離する。
+8. 一度きりの観測は学習ファイルに残す。
 
-For each proposed promotion to repository instructions, state:
+リポジトリ指示への昇格を提案する各項目について、次を示す:
 
-- supporting session count;
-- representative correction or failure;
-- problem prevented;
-- why repository-wide instructions are the correct destination;
-- any overlap or conflict with an existing rule.
+- 支持するセッション数;
+- 代表的な修正または失敗;
+- 防げる問題;
+- なぜリポジトリ全体の指示が適切な場所なのか;
+- 既存ルールとの重複や競合。
 
-Return:
+次を返す:
 
-1. a cleanup diff for `.github/copilot-learnings.md`;
-2. an improvement diff for `.github/copilot-instructions.md`;
-3. proposed `.github/instructions/*.instructions.md` files where appropriate;
-4. candidates better handled by documentation or automated checks.
+1. `.github/copilot-learnings.md` の整理差分;
+2. `.github/copilot-instructions.md` の改善差分;
+3. 必要に応じた `.github/instructions/*.instructions.md` の提案;
+4. ドキュメントや自動チェックで対応した方がよい候補。
 
-Do not modify files until the user approves specific changes.
+具体的な変更の承認があるまではファイルを変更しない。
 
