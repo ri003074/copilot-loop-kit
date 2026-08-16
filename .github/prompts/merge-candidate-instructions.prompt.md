@@ -1,48 +1,48 @@
 ---
 agent: 'agent'
-description: 'Safely merge candidate Copilot instructions into existing repository instructions'
+description: '候補の Copilot 指示を既存のリポジトリ指示へ安全に統合する'
 ---
 
-Compare the existing [repository instructions](../copilot-instructions.md) with the candidate file at `.github/copilot-instructions.candidate.md`.
+既存の [リポジトリ指示](../copilot-instructions.md) と、`.github/copilot-instructions.candidate.md` の候補ファイルを比較する。
 
-The existing repository instructions are authoritative. Do not overwrite them wholesale.
+既存のリポジトリ指示を権威とし、まとめて上書きしない。
 
-Analyze the two files and classify every candidate rule as one of the following:
+2 つのファイルを分析し、候補の各ルールを次のいずれかに分類する:
 
-- duplicate: the existing file already contains the same meaning;
-- conflict: the candidate contradicts or weakens an existing rule;
-- new repository-wide rule: broadly applicable and not already covered;
-- path-specific rule: should be placed under `.github/instructions/*.instructions.md`;
-- automation candidate: better enforced by lint, formatting, tests, hooks, or CI;
-- reject: abstract, unverifiable, obsolete, project-inappropriate, or unnecessary.
+- duplicate: 既存ファイルに同じ意味がすでに含まれている;
+- conflict: 候補が既存ルールと矛盾または弱体化している;
+- new repository-wide rule: 広く適用可能で、まだカバーされていない;
+- path-specific rule: `.github/instructions/*.instructions.md` 配下に置くべき;
+- automation candidate: lint、フォーマット、テスト、フック、CI で強制した方が適切;
+- reject: 抽象的で検証不能、古くなっている、プロジェクトに不適切、または不要。
 
-Follow these requirements:
+次の要件に従う:
 
-- Preserve project-specific existing rules unless the user explicitly approves changing them.
-- Compare meaning, not wording, when detecting duplicates.
-- Merge overlapping rules instead of appending another version.
-- Do not weaken a more specific existing rule.
-- Keep repository-wide instructions short, imperative, specific, and reviewable.
-- Do not add one-off preferences as permanent repository-wide rules.
-- Do not modify unrelated files.
-- Do not delete the candidate file.
+- ユーザーが明示的に変更を承認しない限り、プロジェクト固有の既存ルールは維持する。
+- 重複の判定では、表現ではなく意味を比較する。
+- 追加するのではなく、重複するルールは統合する。
+- より具体的な既存ルールを弱めない。
+- リポジトリ全体の指示は、短く、命令形で、具体的かつレビューしやすく保つ。
+- 一時的な好みを恒久的なリポジトリ全体のルールとして追加しない。
+- 関連しないファイルは変更しない。
+- 候補ファイルは削除しない。
 
-First return this report:
+まず次のレポートを返す:
 
 | Candidate rule | Classification | Existing related rule | Recommendation | Reason |
 |---|---|---|---|---|
 
-Then provide:
+その後、次を提示する:
 
-1. duplicate rules;
-2. conflicting rules;
-3. recommended repository-wide additions or consolidations;
-4. rules to move into path-specific instruction files;
-5. rules better handled by automated checks;
-6. rejected rules and reasons;
-7. the proposed diff for every affected file.
+1. 重複するルール;
+2. 競合するルール;
+3. 推奨されるリポジトリ全体の追加または統合;
+4. パス固有の指示ファイルへ移すべきルール;
+5. 自動チェックで扱うべきルール;
+6. 却下したルールとその理由;
+7. 影響を受ける各ファイルの提案差分。
 
-Do not modify any files during this analysis step.
+この分析段階ではファイルを変更しない。
 
-After presenting the report and diffs, ask the user to specify which proposed changes are approved. Apply only explicitly approved changes in a later step. If approval is ambiguous, ask for clarification before editing.
+レポートと差分を提示した後、どの提案変更を承認するかをユーザーに指定してもらう。承認された変更だけを後続の手順で適用する。承認があいまいな場合は、編集前に確認を求める。
 
