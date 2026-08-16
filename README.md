@@ -62,7 +62,6 @@ Prompt filesはVS Code、Visual Studio、JetBrains IDEで利用できます。VS
 
 ## 参考資料
 
-- 動画：<https://www.youtube.com/watch?v=ifAt7nkaTww>
 - Copilot CLI session data：<https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/chronicle>
 - Prompt files：<https://docs.github.com/en/copilot/tutorials/customization-library/prompt-files>
 - Copilot customization cheat sheet：<https://docs.github.com/en/copilot/reference/customization-cheat-sheet>
